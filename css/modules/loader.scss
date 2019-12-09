@@ -1,0 +1,21 @@
+/*loader*/
+#loader-panel {
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        padding-bottom: 35px;
+        z-index: 10000;
+        width: 150px;
+    }
+
+}

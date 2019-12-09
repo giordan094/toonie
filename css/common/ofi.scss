@@ -1,0 +1,15 @@
+//object-fit fix for IE
+.ofi-cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover; object-position: center;';
+}
+
+.ofi-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  font-family: 'object-fit: contain; object-position: center;';
+}

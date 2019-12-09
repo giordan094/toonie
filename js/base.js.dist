@@ -1,0 +1,156 @@
+$(window).on("load", function () {
+
+    /*remeber lazyloader breaks the scrolling to anchor*/
+    var myLazyLoad = new LazyLoad({
+        elements_selector: ".lazy"
+    });
+
+    var loader = $("#loader-panel");
+
+    if (loader.length) {
+
+        if (window.location.hash != "") {
+
+            /*scroll to hash (anchor) when coming from another page*/
+            var id = window.location.hash.split("#")[1];
+
+            // delete hash so the page won't scroll to it then change his name to show it on url
+            window.location.hash = "";
+
+            window.location.hash = id + "-dolce-forno";
+
+        }
+
+        $.when(loader.fadeOut(1000)).done(function () {
+            scrollToHash(id);
+        });
+    }
+
+
+    /*rellax.js*/
+    if ($(document).find(".rellax").length) {
+        var rellax = new Rellax('.rellax', {
+            wrapper: '.rellax_wrapper',
+            relativeToWrapper: true,
+            center: true,
+            round: true
+        });
+    }
+    /*rellax.js*/
+    if ($(document).find(".rellaxHome").length) {
+        var rellaxHome = new Rellax('.rellaxHome', {
+            center: true,
+        });
+    }
+
+    $(window).on("resize", function () {
+
+        set100vhMenuMobile();
+
+        if ($(document).find(".rellax").length) {
+            // Destroy and create again parallax with previous settings
+            rellax.refresh();
+        }
+        if ($(document).find(".rellaxHome").length) {
+            // Destroy and create again parallax with previous settings
+            rellaxHome.refresh();
+        }
+    });
+
+    /*set nav collapse heigth 100vh on mobile, works on iOS, android*/
+    set100vhMenuMobile();
+
+
+});
+
+$(document).ready(function () {
+
+    AOS.init({
+        disable: "mobile"
+    });
+
+    /*ofi polyfill start*/
+    objectFitImages();
+
+
+    window.addEventListener('load', AOS.refresh);
+
+    /*todo aos mobile or not*/
+    AOS.init({
+        disable: "mobile"
+    });
+
+    /*tilt.js*/
+    /* $('[data-tilt]').tilt({
+         transition: true,
+         perspective: 300
+     });*/
+
+
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'fitImagesInViewport': true,
+        'showImageNumberLabel': false
+    });
+
+
+});
+
+
+function set100vhMenuMobile() {
+    var vhh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vhh', (vhh + 'px'));
+}
+
+function scrollToHash(hash) {
+    var element = document.getElementById(hash);
+    if (element != null) {
+        element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
+
+}
+
+//debouncing
+function debounce(func, wait, immediate) {
+    // 'private' variable for instance
+    // The returned function will be able to reference this due to closure.
+    // Each call to the returned function will share this common timer.
+    var timeout;
+
+    // Calling debounce returns a new anonymous function
+    return function () {
+        // reference the context and args for the setTimeout function
+        var context = this,
+            args = arguments;
+
+        // Should the function be called now? If immediate is true
+        //   and not already in a timeout then the answer is: Yes
+        var callNow = immediate && !timeout;
+
+        // This is the basic debounce behaviour where you can call this
+        //   function several times, but it will only execute once
+        //   [before or after imposing a delay].
+        //   Each time the returned function is called, the timer starts over.
+        clearTimeout(timeout);
+
+        // Set the new timeout
+        timeout = setTimeout(function () {
+
+            // Inside the timeout function, clear the timeout variable
+            // which will let the next execution run when in 'immediate' mode
+            timeout = null;
+
+            // Check if the function already ran with the immediate flag
+            if (!immediate) {
+                // Call the original function with apply
+                // apply lets you define the 'this' object as well as the arguments
+                //    (both captured before setTimeout)
+                func.apply(context, args);
+            }
+        }, wait);
+
+        // Immediate mode and no wait timer? Execute the function..
+        if (callNow) func.apply(context, args);
+    };
+};

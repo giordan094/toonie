@@ -1,0 +1,116 @@
+@mixin button($width, $height,$color, $background, $padding, $font-size-mobile, $font-size-dsk, $color-hover, $background-hover) {
+    color: $color;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid $color;
+    background-color: $background;
+    font-size: $font-size-mobile;
+    font-weight: $fontweight_extra_bold;
+    font-family: $fontfamily_Nunito;
+    overflow: hidden;
+    -webkit-transition: color, background-color 700ms ease;
+    -moz-transition: color, background-color 700ms ease;
+    -o-transition: color, background-color 700ms ease;
+    transition: color, background-color 700ms ease;
+    padding: $padding;
+    text-align: center;
+    text-transform: lowercase;
+    z-index: 9;
+    width: $width;
+    height: $height;
+    span {
+      transition: 500ms ease-out;
+      position: relative;
+      z-index: 2;
+    }
+  
+    @include mq(md) {
+      font-size: $font-size-dsk;
+    }
+    &::before {
+      left: -20px;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      top: 50%;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: lighten($background-hover, 20%);
+      border-radius: 50%;
+    }
+    &::after {
+      position: absolute;
+      top: 50%;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: $background-hover;
+      border-radius: 50%;
+      right: -20px;
+      -webkit-transform: translate(50%, -50%);
+      transform: translate(50%, -50%);
+    }
+    &:hover {
+      span {
+        color: $color-hover;
+      }
+  
+      &::before {
+        -webkit-animation: criss-cross-left 1s both;
+        animation: criss-cross-left 1s both;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+      }
+      &::after {
+        -webkit-animation: criss-cross-right 1s both;
+        animation: criss-cross-right 1s both;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+      }
+      -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+      border: 1px solid $color-hover;
+  
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+/* END UTILS */
+
+
+
+/* MEDIA QUERIES
+how to use it
+@include mq(xs){} or @include mq(245){}
+*/
+$breakpoints: (xs: 576px,
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    xl: 1600px,
+    xxl: 1800px);
+
+@mixin mq($breakpoint) {
+
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        @media screen and (min-width: $breakpoint-value) {
+            @content;
+        }
+
+    }
+
+    @else {
+        @media screen and (min-width: $breakpoint + 'px') {
+            @content;
+        }
+    }
+}
+
+/* END MEDIA QUERIES */
+
+  
