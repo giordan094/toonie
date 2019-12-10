@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -26,18 +27,20 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- plugins -->
     <link rel="stylesheet" type="text/css" media="screen" href="/node_modules/aos/dist/aos.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="/node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
     <!-- style -->
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.min.css">
 
 
 </head>
 
-<body data-spy="scroll" data-target="#navbarbs" data-offset="80">
+<body class="bg">
 
 <!-- loader -->
 <div id="loader-panel">
@@ -58,13 +61,16 @@
     <div class="progress">
         <div class="progress-bar compila" role="progressbar"
              style="width: 33.333333%" aria-valuenow="15" aria-valuemin="0"
-             aria-valuemax="100">1 COMPILAZIONE DATI</div>
+             aria-valuemax="100">1 COMPILAZIONE DATI
+        </div>
         <div class="progress-bar riepilogo" role="progressbar" style="width: 33.333333%" aria-valuenow="15"
              aria-valuemin="0"
-             aria-valuemax="100">2 RIEPILOGO</div>
+             aria-valuemax="100">2 RIEPILOGO
+        </div>
         <div class="progress-bar ricevuta" role="progressbar" style="width: 33.333333%" aria-valuenow="15"
              aria-valuemin="0"
-             aria-valuemax="100">1 RICEVUTA</div>
+             aria-valuemax="100">1 RICEVUTA
+        </div>
     </div>
 </section>
 
@@ -74,7 +80,7 @@
         <!--info-->
         <div class="col-md-4 col-info">
             <div class="wrap-info">
-                <h5 class="titolo">Paghi bollettini in pochi click</h5>
+                <h5 class="titolo">Paghi Bollettini in pochi click</h5>
                 <p class="testo">Il Bollettino è una modalità di
                     pagamento per effettuare un
                     versamento di soldi a terzi
@@ -88,30 +94,104 @@
         <!--bollettino form-->
         <div class="col-md-8 order-md-first col-bollettino">
             <form>
-                <div class="form-group">
-                    <label for="validationCustom04">State</label>
-                    <select class="custom-select" id="validationCustom04" required>
-                        <option selected disabled value="">Scegli...</option>
-                        <option>Bianco</option>
-                        <option>Nero</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
+                <!--tipo bollettino-->
+                <h4 class="titolo mb-3">TIPO BOLLETTINO</h4>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <select class="custom-select" id="validationCustom04" required>
+                            <option selected disabled value="">Scegli...</option>
+                            <option>Bianco</option>
+                            <option>Nero</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
                     </div>
                 </div>
+                <!--debitore-->
+                <h4 class="titolo mb-3">DEBITORE</h4>
                 <div class="form-row">
+                    <div class="form-group col-3">
+                        <button class="btn">Persona Giuridica</button>
+                    </div>
+                    <div class="form-group col-3">
+                        <button class="btn">Persona Fisica</button>
+                    </div>
 
-
+                    <div class="form-group col-6 d-flex align-items-center pl-4">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1">Presentatore uguale a debitore</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="cf">Codice Fiscale</label>
+                    <input type="text" class="form-control" id="cf">
                 </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <div class="form-row">
+                    <div class="form-group col-6 pr-4">
+                        <label for="cognome">Cognome</label>
+                        <input type="text" class="form-control" id="cognome">
+                    </div>
+                    <div class="form-group col-6 pl-4">
+                        <label for="nome">Nome </label>
+                        <input type="text" class="form-control" id="nome">
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <label for="email">Email <span>(Campo obbligatorio in alternativa a cellulare)</span></label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="tel">Cellulare <span>(Campo obbligatorio in alternativa a email)</span></label>
+                    <input type="tel" class="form-control" id="tel">
+                </div>
+                <div class="separator-dotted"></div>
+                <!--creditore-->
+                <h4 class="titolo mb-3">CREDITORE</h4>
+                <div class="form-row">
+                    <div class="form-group col-6 pr-4">
+                        <label for="ragione-sociale">Nome o Ragione Sociale</label>
+                        <input type="text" class="form-control" id="ragione-sociale">
+                    </div>
+                    <div class="form-group col-6 pl-4">
+                        <label for="conto-corrente-postale">Conto Corrente Postale</label>
+                        <input type="text" class="form-control" id="conto-corrente-postale">
+                    </div>
+                </div>
+                <div class="separator-dotted"></div>
+                <!--dati bollettino-->
+                <h4 class="titolo">DATI BOLLETTINO</h4>
+                <div class="form-row">
+                    <div class="form-group col-6 pr-4">
+                        <label for="importo">Importo</label>
+                        <input type="text" class="form-control" id="importo"></div>
+                    <div class="form-group col-6 pl-4">
+                        <label for="centesimi">Centesimi</label>
+                        <input type="text" class="form-control" id="centesimi">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descrizione">Descrizione</label>
+                    <input type="text" class="form-control" id="descrizione">
+                </div>
+                <div class="separator-dotted"></div>
+                <div class="mb-2 form-check abc-checkbox abc-checkbox-circle">
+                    <input class="form-check-input" id="termini" type="checkbox">
+                    <label class="form-check-label" for="termini">
+                        Foglio informativo
+                    </label>
+                </div>
+                <div class="form-group form-check abc-checkbox abc-checkbox-circle">
+                    <input class="form-check-input" id="privacy" type="checkbox">
+                    <label class="form-check-label" for="privacy">
+                        Informativa sulla privacy
+                    </label>
+                </div>
+
+                <div class="separator-dotted"></div>
+                <button type="submit" class="btn">Continua</button>
             </form>
         </div>
     </div>
