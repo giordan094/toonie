@@ -1,19 +1,23 @@
-.intro {
-  .testo {
-    margin-bottom: 0;
-    @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+#mav-page {
+  .intro {
+    .testo {
+      margin-bottom: 0;
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+    }
+  }
+
+  .input-group {
+    .input-group-text {
+      border-radius: 12px 0 0 12px;
+      background-color: $grigio_E6E6E6;
+      border: 1px solid;
+    }
+
+    .form-control {
+      border-radius: 0 !important;
+    }
   }
 }
 
-.input-group {
-  .input-group-text {
-    border-radius: 12px 0 0 12px;
-    background-color: $grigio_E6E6E6;
-    border: 1px solid;
-  }
-  .form-control {
-    border-radius: 0 !important;
-  }
-}
 
 

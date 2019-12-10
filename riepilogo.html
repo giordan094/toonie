@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Azienda Agricola Galli</title>
+    <meta name="description" content="Azienda Agricola Galli a Piateda">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- fonts and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- head scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- plugins -->
+    <link rel="stylesheet" type="text/css"
+          href="/css/vendor/awesome-bootstrap-checkbox.css">
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.min.css">
+
+
+</head>
+
+<body class="bg" id="riepilogo">
+
+<!-- loader -->
+<div id="loader-panel">
+    <img src="assets/logo.png" alt="">
+</div>
+
+<!--bollettino-->
+<header class="container-fluid">
+    <div class="row no-gutters">
+        <div class="col-12 logo_wrapper">
+            <img src="assets/logo.svg" alt="Toonie Logo" class="logo">
+        </div>
+    </div>
+</header>
+
+<!--progress bar-->
+<section class="container progress-bar">
+    <div class="progress">
+        <div class="progress-bar compila" role="progressbar"
+             style="width: 33.333333%" aria-valuenow="15" aria-valuemin="0"
+             aria-valuemax="100">1 COMPILAZIONE DATI
+        </div>
+        <div class="progress-bar riepilogo" role="progressbar" style="width: 33.333333%" aria-valuenow="15"
+             aria-valuemin="0"
+             aria-valuemax="100">2 RIEPILOGO
+        </div>
+        <div class="progress-bar ricevuta" role="progressbar" style="width: 33.333333%" aria-valuenow="15"
+             aria-valuemin="0"
+             aria-valuemax="100">1 RICEVUTA
+        </div>
+    </div>
+</section>
+
+<!--content-->
+<section class="container content">
+    <div class="row no-gutters">
+        <!--info-->
+        <div class="col-md-4 col-info">
+            <div class="wrap-info">
+                <h5 class="titolo">Paghi Bollettini in
+                    pochi click</h5>
+                <p class="testo">Il Bollettino è una modalità di
+                    pagamento per effettuare un
+                    versamento di soldi a terzi
+                    come, ad esempio, il pagamento di bollette, imposte,
+                    multe etc. Su NF Money agent
+                    paghi tutti bollettini in pochi
+                    istanti!</p>
+            </div>
+        </div>
+        <!--riepilogo form-->
+        <div class="col-md-8 order-md-first col-bollettino">
+
+            <h5 class="titolo mb-3">RIEPILOGO</h5>
+            <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                    <td>Tipo Bollettino</td>
+                    <td>Bianco</td>
+                </tr>
+                <tr>
+                    <td>N. Bollettino</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>N. Fattura</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>N. Cliente</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Importo</td>
+                    <td>100,00</td>
+                </tr>
+                <tr>
+                    <td>Commissioni</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Importo totale</td>
+                    <td>100,00</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h5 class="titolo mb-3">CREDITORE</h5>
+            <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                    <td>Nome o Ragione Sociale</td>
+                    <td>XXXXXXXXXXXXXXXXXXXXX <br>XXXXXXXXXXXXXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>IBAN</td>
+                    <td>ITXXXXXXXXXXXXXXXXXXXXXX</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <h5 class="titolo mb-3">DEBITORE</h5>
+            <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                    <td>Cognome o Ragione Sociale</td>
+                    <td>XXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>Nome</td>
+                    <td>xxxxx</td>
+                </tr>
+                <tr>
+                    <td>Codice Fiscale</td>
+                    <td>XXXXXXXXXXXXXXXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>xxxxx.xxxxx@xxxx.xxx</td>
+                </tr>
+                <tr>
+                    <td>Cellulare</td>
+                    <td>XXXXXXXXXXX</td>
+                </tr>
+                </tbody>
+            </table>
+            <h5 class="titolo mb-3">PRESENTATORE</h5>
+            <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                    <td>Cognome</td>
+                    <td>XXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>Nome</td>
+                    <td>xxxxx</td>
+                </tr>
+                <tr>
+                    <td>Codice Fiscale</td>
+                    <td>XXXXXXXXXXXXXXXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>xxxxx.xxxxx@xxxx.xxx</td>
+                </tr>
+                <tr>
+                    <td>Cellulare</td>
+                    <td>XXXXXXXXXXX</td>
+                </tr>
+                </tbody>
+            </table>
+            <h5 class="titolo mb-3">SELEZIONA METODO DI PAGAMENTO</h5>
+            <div class="form-group form-check abc-checkbox abc-checkbox-circle">
+                <input class="form-check-input" id="metodo-pagamento" type="checkbox">
+                <label class="form-check-label" for="metodo-pagamento">
+                    Contanti
+                </label>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <button class="btn">Indietro</button>
+                </div>
+                <div class="form-group col-6">
+                    <button class="btn">Paga</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+<!-- scripts -->
+<script src="/js/base.js"></script>
+<script src="/js/ofi.js"></script>
+<script src="/js/aos.js"></script>
+</body>
+
+</html>

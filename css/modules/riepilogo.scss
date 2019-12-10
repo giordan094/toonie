@@ -1,0 +1,64 @@
+#riepilogo {
+
+
+  .progress-bar{
+    .compila{
+      background-color: $viola_5A33C5;
+      &:after{
+        border-left-color: $viola_5A33C5;
+      }
+    }
+    .riepilogo{
+      background-color: $viola_scuro_171234;
+      &:after{
+        border-left-color: $viola_scuro_171234;
+      }
+    }
+  }
+
+
+
+
+  table {
+    margin-bottom: 3rem;
+
+    tr {
+      td {
+        width: 50%;
+        padding-left: 0;
+
+        &:first-child {
+          @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+        }
+
+        &:last-child {
+          @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $grigio_666666);
+        }
+      }
+    }
+  }
+
+  .titolo {
+    @include text($fontfamily_SofiaPro, $font20, $fontweight_medium, $viola_5A33C5);
+  }
+
+  .abc-checkbox label {
+    @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+    padding-left: 12px;
+    padding-top: 2px;
+
+    &::before {
+      width: 25px;
+      height: 25px;
+    }
+
+    &::after {
+      width: 25px;
+      height: 25px;
+      top: 5px;
+      font-size: 17px;
+    }
+
+  }
+}
+

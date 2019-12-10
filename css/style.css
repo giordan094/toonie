@@ -120,56 +120,56 @@ footer {
       .bg .progress-bar .progress .ricevuta {
         padding-left: 30px;
         background-color: #9C85DC; }
-  .bg #content .col-info {
+  .bg .content .col-info {
     padding-bottom: 30px; }
     @media screen and (min-width: 768px) {
-      .bg #content .col-info {
+      .bg .content .col-info {
         padding-top: 50px; } }
-    .bg #content .col-info .wrap-info {
+    .bg .content .col-info .wrap-info {
       background-color: #E6E6E6;
       border-radius: 18px;
       padding: 20px 30px 20px 20px; }
-      .bg #content .col-info .wrap-info .titolo {
+      .bg .content .col-info .wrap-info .titolo {
         font-family: "sofia-pro", sans-serif;
         font-size: 20px;
         font-weight: 500;
         color: #5A33C5;
         line-height: initial; }
-      .bg #content .col-info .wrap-info .testo {
+      .bg .content .col-info .wrap-info .testo {
         font-family: "sofia-pro", sans-serif;
         font-size: 16px;
         font-weight: 500;
         color: #333333;
         line-height: initial;
         margin-bottom: 0; }
-  .bg #content .col-bollettino {
+  .bg .content .col-bollettino {
     padding-bottom: 40px; }
     @media screen and (min-width: 768px) {
-      .bg #content .col-bollettino {
+      .bg .content .col-bollettino {
         padding-top: 20px;
         padding-right: 40px; } }
-    .bg #content .col-bollettino form .titolo {
+    .bg .content .col-bollettino form .titolo {
       font-family: "sofia-pro", sans-serif;
       font-size: 20px;
       font-weight: 500;
       color: #5A33C5;
       line-height: initial; }
-    .bg #content .col-bollettino form label {
+    .bg .content .col-bollettino form label {
       font-family: "sofia-pro", sans-serif;
       font-size: 16px;
       font-weight: 500;
       color: #333333;
       line-height: initial; }
-      .bg #content .col-bollettino form label span {
+      .bg .content .col-bollettino form label span {
         color: #666666; }
-    .bg #content .col-bollettino form .separator-dotted {
+    .bg .content .col-bollettino form .separator-dotted {
       border-bottom: 2px dotted #333333;
       margin-bottom: 1.2rem; }
-      .bg #content .col-bollettino form .separator-dotted:not(:last-of-type) {
+      .bg .content .col-bollettino form .separator-dotted:not(:last-of-type) {
         padding-top: 10px; }
-      .bg #content .col-bollettino form .separator-dotted:last-of-type {
+      .bg .content .col-bollettino form .separator-dotted:last-of-type {
         margin-bottom: 40px; }
-    .bg #content .col-bollettino form .btn {
+    .bg .content .col-bollettino form .btn {
       border-radius: 12px;
       background-color: #5A33C5;
       padding: 10px;
@@ -180,30 +180,30 @@ footer {
       font-weight: 700;
       color: white;
       line-height: initial; }
-    .bg #content .col-bollettino form .custom-switch input:checked + label::before {
+    .bg .content .col-bollettino form .custom-switch input:checked + label::before {
       background-color: #5A33C5; }
-    .bg #content .col-bollettino form input:not([type='checkbox']), .bg #content .col-bollettino form select {
+    .bg .content .col-bollettino form input:not([type='checkbox']), .bg .content .col-bollettino form select {
       border-radius: 12px;
       background-color: #F2F2F2;
       border-color: #666666; }
-    .bg #content .col-bollettino form .flex-row {
+    .bg .content .col-bollettino form .flex-row {
       align-items: baseline; }
-    .bg #content .col-bollettino form .form-group {
+    .bg .content .col-bollettino form .form-group {
       margin-bottom: 1.5rem; }
-    .bg #content .col-bollettino form .abc-checkbox label {
+    .bg .content .col-bollettino form .abc-checkbox label {
       padding-left: 12px;
       padding-top: 2px;
       color: #5A33C5; }
-      .bg #content .col-bollettino form .abc-checkbox label::before {
+      .bg .content .col-bollettino form .abc-checkbox label::before {
         width: 25px;
         height: 25px; }
-      .bg #content .col-bollettino form .abc-checkbox label::after {
+      .bg .content .col-bollettino form .abc-checkbox label::after {
         width: 25px;
         height: 25px;
         top: 5px;
         font-size: 17px; }
 
-.intro .testo {
+#mav-page .intro .testo {
   margin-bottom: 0;
   font-family: "sofia-pro", sans-serif;
   font-size: 16px;
@@ -211,10 +211,62 @@ footer {
   color: #333333;
   line-height: initial; }
 
-.input-group .input-group-text {
+#mav-page .input-group .input-group-text {
   border-radius: 12px 0 0 12px;
   background-color: #E6E6E6;
   border: 1px solid; }
 
-.input-group .form-control {
+#mav-page .input-group .form-control {
   border-radius: 0 !important; }
+
+#riepilogo .progress-bar .compila {
+  background-color: #5A33C5; }
+  #riepilogo .progress-bar .compila:after {
+    border-left-color: #5A33C5; }
+
+#riepilogo .progress-bar .riepilogo {
+  background-color: #171234; }
+  #riepilogo .progress-bar .riepilogo:after {
+    border-left-color: #171234; }
+
+#riepilogo table {
+  margin-bottom: 3rem; }
+  #riepilogo table tr td {
+    width: 50%;
+    padding-left: 0; }
+    #riepilogo table tr td:first-child {
+      font-family: "sofia-pro", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333333;
+      line-height: initial; }
+    #riepilogo table tr td:last-child {
+      font-family: "sofia-pro", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #666666;
+      line-height: initial; }
+
+#riepilogo .titolo {
+  font-family: "sofia-pro", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #5A33C5;
+  line-height: initial; }
+
+#riepilogo .abc-checkbox label {
+  font-family: "sofia-pro", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  line-height: initial;
+  padding-left: 12px;
+  padding-top: 2px; }
+  #riepilogo .abc-checkbox label::before {
+    width: 25px;
+    height: 25px; }
+  #riepilogo .abc-checkbox label::after {
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    font-size: 17px; }
