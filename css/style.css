@@ -38,7 +38,7 @@ footer {
   overflow: hidden; }
 
 .container {
-  max-width: 1535px; }
+  max-width: 1335px; }
 
 /*loader*/
 #loader-panel {
@@ -60,64 +60,66 @@ footer {
 
 .bg {
   background-color: #F2F2F2; }
-  .bg #header {
+  .bg header {
     background-color: #171234; }
-    .bg #header .row {
+    .bg header .row {
       height: 65px;
       width: 100%;
       align-items: center; }
-      .bg #header .row .logo_wrapper {
+      .bg header .row .logo_wrapper {
         padding-left: 30px; }
-        .bg #header .row .logo_wrapper .logo {
+        .bg header .row .logo_wrapper .logo {
           height: 26px;
           width: 88px; }
-  .bg #progress-bar .progress {
-    margin: 20px 0;
-    border-radius: 18px;
-    height: 60px;
-    width: 100%;
-    font-family: "sofia-pro", sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    color: white;
-    line-height: initial; }
-    @media screen and (min-width: 576px) {
-      .bg #progress-bar .progress {
-        font-size: 16px; } }
-    .bg #progress-bar .progress .compila {
-      overflow: visible;
-      position: relative;
-      background-color: #171234; }
-      .bg #progress-bar .progress .compila:after {
-        width: 0;
-        height: 0;
-        border-top: 30px inset transparent;
-        border-bottom: 30px inset transparent;
-        border-left: 30px solid #171234;
-        position: absolute;
-        content: "";
-        top: 0;
-        right: -30px;
-        z-index: 2; }
-    .bg #progress-bar .progress .riepilogo {
-      overflow: visible;
-      position: relative;
-      background-color: #5A33C5;
-      padding-left: 30px; }
-      .bg #progress-bar .progress .riepilogo:after {
-        width: 0;
-        height: 0;
-        border-top: 30px inset transparent;
-        border-bottom: 30px inset transparent;
-        border-left: 30px solid #5a33c5;
-        position: absolute;
-        content: "";
-        top: 0;
-        right: -30px;
-        z-index: 2; }
-    .bg #progress-bar .progress .ricevuta {
-      padding-left: 30px;
-      background-color: #9C85DC; }
+  .bg .progress-bar {
+    background-color: #F2F2F2; }
+    .bg .progress-bar .progress {
+      margin: 30px 0;
+      border-radius: 18px;
+      height: 60px;
+      width: 100%;
+      font-family: "sofia-pro", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      line-height: initial; }
+      @media screen and (min-width: 576px) {
+        .bg .progress-bar .progress {
+          font-size: 16px; } }
+      .bg .progress-bar .progress .compila {
+        overflow: visible;
+        position: relative;
+        background-color: #171234; }
+        .bg .progress-bar .progress .compila:after {
+          width: 0;
+          height: 0;
+          border-top: 30px inset transparent;
+          border-bottom: 30px inset transparent;
+          border-left: 30px solid #171234;
+          position: absolute;
+          content: "";
+          top: 0;
+          right: -30px;
+          z-index: 2; }
+      .bg .progress-bar .progress .riepilogo {
+        overflow: visible;
+        position: relative;
+        background-color: #5A33C5;
+        padding-left: 30px; }
+        .bg .progress-bar .progress .riepilogo:after {
+          width: 0;
+          height: 0;
+          border-top: 30px inset transparent;
+          border-bottom: 30px inset transparent;
+          border-left: 30px solid #5a33c5;
+          position: absolute;
+          content: "";
+          top: 0;
+          right: -30px;
+          z-index: 2; }
+      .bg .progress-bar .progress .ricevuta {
+        padding-left: 30px;
+        background-color: #9C85DC; }
   .bg #content .col-info {
     padding-bottom: 30px; }
     @media screen and (min-width: 768px) {
@@ -126,12 +128,12 @@ footer {
     .bg #content .col-info .wrap-info {
       background-color: #E6E6E6;
       border-radius: 18px;
-      padding: 20px; }
+      padding: 20px 30px 20px 20px; }
       .bg #content .col-info .wrap-info .titolo {
         font-family: "sofia-pro", sans-serif;
         font-size: 20px;
         font-weight: 500;
-        color: #9C85DC;
+        color: #5A33C5;
         line-height: initial; }
       .bg #content .col-info .wrap-info .testo {
         font-family: "sofia-pro", sans-serif;
@@ -145,7 +147,7 @@ footer {
     @media screen and (min-width: 768px) {
       .bg #content .col-bollettino {
         padding-top: 20px;
-        padding-right: 20px; } }
+        padding-right: 40px; } }
     .bg #content .col-bollettino form .titolo {
       font-family: "sofia-pro", sans-serif;
       font-size: 20px;
@@ -158,11 +160,15 @@ footer {
       font-weight: 500;
       color: #333333;
       line-height: initial; }
+      .bg #content .col-bollettino form label span {
+        color: #666666; }
     .bg #content .col-bollettino form .separator-dotted {
       border-bottom: 2px dotted #333333;
       margin-bottom: 1.2rem; }
       .bg #content .col-bollettino form .separator-dotted:not(:last-of-type) {
         padding-top: 10px; }
+      .bg #content .col-bollettino form .separator-dotted:last-of-type {
+        margin-bottom: 40px; }
     .bg #content .col-bollettino form .btn {
       border-radius: 12px;
       background-color: #5A33C5;
@@ -196,3 +202,19 @@ footer {
         height: 25px;
         top: 5px;
         font-size: 17px; }
+
+.intro .testo {
+  margin-bottom: 0;
+  font-family: "sofia-pro", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  line-height: initial; }
+
+.input-group .input-group-text {
+  border-radius: 12px 0 0 12px;
+  background-color: #E6E6E6;
+  border: 1px solid; }
+
+.input-group .form-control {
+  border-radius: 0 !important; }

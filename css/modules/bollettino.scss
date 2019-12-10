@@ -1,7 +1,7 @@
 .bg {
   background-color: $grigio_bg_F2F2F2;
 
-  #header {
+  header {
     background-color: $viola_scuro_171234;
 
     .row {
@@ -20,9 +20,10 @@
     }
   }
 
-  #progress-bar {
+  .progress-bar {
+    background-color: $grigio_bg_F2F2F2;
     .progress {
-      margin: 20px 0;
+      margin: 30px 0;
       border-radius: 18px;
       height: 60px;
       width: 100%;
@@ -89,10 +90,10 @@
       .wrap-info {
         background-color: $grigio_E6E6E6;
         border-radius: 18px;
-        padding: 20px;
+        padding: 20px 30px 20px 20px;
 
         .titolo {
-          @include text($fontfamily_SofiaPro, $font20, $fontweight_medium, $viola_chiaro_9C85DC);
+          @include text($fontfamily_SofiaPro, $font20, $fontweight_medium, $viola_5A33C5);
         }
 
         .testo {
@@ -106,7 +107,7 @@
       padding-bottom: 40px;
       @include mq(sm) {
         padding-top: 20px;
-        padding-right: 20px;
+        padding-right: 40px;
       }
 
       form {
@@ -116,14 +117,19 @@
 
         label {
           @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+          span{
+            color: $grigio_666666;
+          }
         }
 
         .separator-dotted {
           border-bottom: 2px dotted $nero_333333;
           margin-bottom: 1.2rem;
-
           &:not(:last-of-type) {
             padding-top: 10px;
+          }
+          &:last-of-type{
+            margin-bottom: 40px;
           }
         }
 

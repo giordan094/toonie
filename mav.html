@@ -63,41 +63,89 @@
     </div>
 </section>
 
+<!--intro-->
+<section class="container intro">
+    <p class="testo">NF Money ti permette di pagare tutti i MAV e i RAV: inserisci il
+        codeice di 17 o 18 cifre, indicato sul bollettino, l’importo e i dati
+        del debitore. Una volta completato l’inserimento, potrai visualizzare il riepilogo e procedere al pagamento.</p>
+</section>
+
 <!--content-->
 <section class="container" id="content">
     <div class="row no-gutters">
         <!--info-->
         <div class="col-md-4 col-info">
             <div class="wrap-info">
-                <h5 class="titolo">Paghi Bollettini in pochi click</h5>
-                <p class="testo">Il Bollettino è una modalità di
-                    pagamento per effettuare un
-                    versamento di soldi a terzi
-                    come, ad esempio, il paga-
-                    mento di bollette, imposte,
-                    multe etc. Su NF Money agent
-                    paghi tutti bollettini in pochi
-                    istanti!</p>
+                <h5 class="titolo">Paghi rav e mav in pochi click</h5>
+                <p class="testo">I MAV e RAV sono emessi da
+                    banche e istituti di credito e
+                    vengono usati per regolare
+                    transazioni a distanza
+                    mediante avviso (MAV) o per
+                    regolare riscossioni di somme
+                    iscritte a ruolo come ad
+                    esempio le sanzioni per violazi-
+                    oni del codice della strada
+                    (RAV). Su NF Money agent
+                    paghi tutti i MAV e i RAV in
+                    pochi istanti!</p>
             </div>
         </div>
         <!--bollettino form-->
         <div class="col-md-8 order-md-first col-bollettino">
             <form>
                 <!--tipo bollettino-->
-                <h4 class="titolo mb-3">TIPO BOLLETTINO</h4>
+                <h4 class="titolo mb-3">DATI MAV - RAW</h4>
                 <div class="form-row">
-                    <div class="form-group col-6">
-                        <select class="custom-select" id="validationCustom04" required>
-                            <option selected disabled value="">Scegli...</option>
-                            <option>Bianco</option>
-                            <option>Nero</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid state.
+                    <div class="form-group col-6 pr-4 pl-0">
+                        <label  for="mav">Codice MAV</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="customControlValidation1" name="radio-stacked" required>
+                                        <label class="custom-control-label" for="customControlValidation1">MAV</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" id="mav">
                         </div>
+                    </div>
+                    <div class="form-group col-6 pl-4">
+                        <label  for="mav">Codice RAV</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+                                        <label class="custom-control-label" for="customControlValidation2">RAV</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" id="rav">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="postale" name="radio-stacked" required>
+                    <label class="custom-control-label" for="postale">Postale</label>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-6 pr-4">
+                        <label for="importo">Importo</label>
+                        <input type="text" class="form-control" id="importo">
+                    </div>
+                    <div class="form-group col-6 pl-4">
+                        <label for="centesimi">Centesimi</label>
+                        <input type="text" class="form-control" id="centesimi">
                     </div>
                 </div>
                 <!--debitore-->
+                <div class="separator-dotted"></div>
                 <h4 class="titolo mb-3">DEBITORE</h4>
                 <div class="form-row">
                     <div class="form-group col-3">
@@ -115,6 +163,28 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group col-6 pr-4">
+                        <label for="cognome">Cognome</label>
+                        <input type="text" class="form-control" id="cognome">
+                    </div>
+                    <div class="form-group col-6 pl-4">
+                        <label for="nome">Nome </label>
+                        <input type="text" class="form-control" id="nome">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span>(Campo obbligatorio in alternativa a cellulare)</span></label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="tel">Cellulare <span>(Campo obbligatorio in alternativa a email)</span></label>
+                    <input type="tel" class="form-control" id="tel">
+                </div>
+                <div class="separator-dotted"></div>
+                <!--presentatore-->
+                <h4 class="titolo mb-3">PRESENTATORE</h4>
                 <div class="form-group">
                     <label for="cf">Codice Fiscale</label>
                     <input type="text" class="form-control" id="cf">
@@ -137,35 +207,8 @@
                     <label for="tel">Cellulare <span>(Campo obbligatorio in alternativa a email)</span></label>
                     <input type="tel" class="form-control" id="tel">
                 </div>
-                <div class="separator-dotted"></div>
-                <!--creditore-->
-                <h4 class="titolo mb-3">CREDITORE</h4>
-                <div class="form-row">
-                    <div class="form-group col-6 pr-4">
-                        <label for="ragione-sociale">Nome o Ragione Sociale</label>
-                        <input type="text" class="form-control" id="ragione-sociale">
-                    </div>
-                    <div class="form-group col-6 pl-4">
-                        <label for="conto-corrente-postale">Conto Corrente Postale</label>
-                        <input type="text" class="form-control" id="conto-corrente-postale">
-                    </div>
-                </div>
-                <div class="separator-dotted"></div>
-                <!--dati bollettino-->
-                <h4 class="titolo">DATI BOLLETTINO</h4>
-                <div class="form-row">
-                    <div class="form-group col-6 pr-4">
-                        <label for="importo">Importo</label>
-                        <input type="text" class="form-control" id="importo"></div>
-                    <div class="form-group col-6 pl-4">
-                        <label for="centesimi">Centesimi</label>
-                        <input type="text" class="form-control" id="centesimi">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="descrizione">Descrizione</label>
-                    <input type="text" class="form-control" id="descrizione">
-                </div>
+                <!--end presentatore-->
+
                 <div class="separator-dotted"></div>
                 <div class="mb-2 form-check abc-checkbox abc-checkbox-circle">
                     <input class="form-check-input" id="termini" type="checkbox">
