@@ -1,0 +1,108 @@
+#storico {
+  .col-storico {
+    padding: 40px 0;
+
+    .titolo {
+      @include text($fontfamily_SofiaPro, $font20, $fontweight_medium, $viola_5A33C5);
+    }
+
+    .switch-titolo {
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+      position: relative;
+      margin-left: -2.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    input:not(.no-round-corner) {
+      border-radius: 12px;
+      background-color: $grigio_bg_F2F2F2;
+      border-color: $grigio_666666;
+    }
+
+    select {
+      border-radius: 12px;
+      background-color: $grigio_E6E6E6;
+    }
+
+    .abc-checkbox {
+      margin-bottom: 40px;
+
+      label {
+        @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+        padding-left: 12px;
+        padding-top: 2px;
+
+        &::before {
+          width: 25px;
+          height: 25px;
+        }
+
+        &::after {
+          width: 25px;
+          height: 25px;
+          top: 5px;
+          font-size: 17px;
+        }
+      }
+    }
+
+    .btn {
+      border-radius: 12px;
+      background-color: $viola_5A33C5;
+      padding: 10px;
+      width: 100%;
+      height: 100%;
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
+      transition: background-color 500ms linear;
+
+      &:hover {
+        background-color: darken($viola_5A33C5, 25%);
+      }
+    }
+
+  }
+
+  .excel-export {
+    background-color: $grigio_E6E6E6;
+
+    .btn {
+      border-radius: 12px;
+      background-color: $verde_7FFF9C;
+      padding: 10px;
+      width: 100%;
+      height: 100%;
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, $nero_333333);
+      transition: background-color 500ms linear;
+
+      &:hover {
+        background-color: darken($verde_7FFF9C, 25%);
+      }
+    }
+
+
+    .tabella {
+      border-collapse: separate;
+      margin-bottom: 3rem;
+
+      thead {
+
+
+        th {
+          @include text($fontfamily_SofiaPro, $font16, $fontweight_regular, $nero_333333);
+          border-top: 2px dotted $nero_333333;
+          border-bottom: 2px dotted $nero_333333;
+
+        }
+      }
+
+      tbody {
+        tr {
+          @include text($fontfamily_SofiaPro, $font16, $fontweight_regular, $nero_333333);
+          background-color: white;
+        }
+      }
+
+    }
+  }
+}
+

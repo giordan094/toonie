@@ -140,6 +140,10 @@
           width: 100%;
           height: 100%;
           @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
+          transition: background-color 500ms linear;
+          &:hover{
+            background-color: darken($viola_5A33C5,25%);
+          }
         }
 
 

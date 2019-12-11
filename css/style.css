@@ -30,8 +30,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
+/*focus and checked fix*/
 *:focus {
-  outline: none; }
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(90, 51, 197, 0.25) !important; }
+
+.custom-control-input:checked + label::before {
+  border-color: #5A33C5 !important;
+  background-color: #5A33C5 !important; }
+
+.custom-control-input:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(90, 51, 197, 0.25) !important; }
+
+.form-check-input:checked + label::before, .form-check-input:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(90, 51, 197, 0.25) !important;
+  outline: none !important; }
+
+/*text selection fix*/
+::selection {
+  background: #9C85DC;
+  color: white; }
+
+::-moz-selection {
+  background: #9C85DC;
+  color: white; }
 
 .container-fluid,
 footer {
@@ -39,6 +61,23 @@ footer {
 
 .container {
   max-width: 1335px; }
+
+.separator-dotted {
+  border-bottom: 2px dotted #333333;
+  margin-bottom: 1.2rem; }
+  .separator-dotted:not(:last-of-type) {
+    padding-top: 10px; }
+  .separator-dotted:last-of-type {
+    margin-bottom: 40px; }
+
+label {
+  font-family: "sofia-pro", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  line-height: initial; }
+  label span {
+    color: #666666; }
 
 /*loader*/
 #loader-panel {
@@ -179,7 +218,10 @@ footer {
       font-size: 16px;
       font-weight: 700;
       color: white;
-      line-height: initial; }
+      line-height: initial;
+      transition: background-color 500ms linear; }
+      .bg .content .col-bollettino form .btn:hover {
+        background-color: #2c1960; }
     .bg .content .col-bollettino form .custom-switch input:checked + label::before {
       background-color: #5A33C5; }
     .bg .content .col-bollettino form input:not([type='checkbox']), .bg .content .col-bollettino form select {
@@ -289,11 +331,109 @@ footer {
     font-size: 16px;
     font-weight: 700;
     color: #333333;
-    line-height: initial; }
+    line-height: initial;
+    transition: background-color 500ms linear; }
+    #riepilogo .btn.indietro:hover {
+      background-color: #00ff3a; }
   #riepilogo .btn.paga {
     background-color: #5A33C5;
     font-family: "sofia-pro", sans-serif;
     font-size: 16px;
     font-weight: 700;
     color: white;
+    line-height: initial;
+    transition: background-color 500ms linear; }
+    #riepilogo .btn.paga:hover {
+      background-color: #2c1960; }
+
+#storico .col-storico {
+  padding: 40px 0; }
+  #storico .col-storico .titolo {
+    font-family: "sofia-pro", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #5A33C5;
     line-height: initial; }
+  #storico .col-storico .switch-titolo {
+    font-family: "sofia-pro", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+    line-height: initial;
+    position: relative;
+    margin-left: -2.25rem;
+    margin-bottom: 0.5rem; }
+  #storico .col-storico input:not(.no-round-corner) {
+    border-radius: 12px;
+    background-color: #F2F2F2;
+    border-color: #666666; }
+  #storico .col-storico select {
+    border-radius: 12px;
+    background-color: #E6E6E6; }
+  #storico .col-storico .abc-checkbox {
+    margin-bottom: 40px; }
+    #storico .col-storico .abc-checkbox label {
+      font-family: "sofia-pro", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333333;
+      line-height: initial;
+      padding-left: 12px;
+      padding-top: 2px; }
+      #storico .col-storico .abc-checkbox label::before {
+        width: 25px;
+        height: 25px; }
+      #storico .col-storico .abc-checkbox label::after {
+        width: 25px;
+        height: 25px;
+        top: 5px;
+        font-size: 17px; }
+  #storico .col-storico .btn {
+    border-radius: 12px;
+    background-color: #5A33C5;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    font-family: "sofia-pro", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: initial;
+    transition: background-color 500ms linear; }
+    #storico .col-storico .btn:hover {
+      background-color: #2c1960; }
+
+#storico .excel-export {
+  background-color: #E6E6E6; }
+  #storico .excel-export .btn {
+    border-radius: 12px;
+    background-color: #7FFF9C;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    font-family: "sofia-pro", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    line-height: initial;
+    transition: background-color 500ms linear; }
+    #storico .excel-export .btn:hover {
+      background-color: #00ff3a; }
+  #storico .excel-export .tabella {
+    border-collapse: separate;
+    margin-bottom: 3rem; }
+    #storico .excel-export .tabella thead th {
+      font-family: "sofia-pro", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #333333;
+      line-height: initial;
+      border-top: 2px dotted #333333;
+      border-bottom: 2px dotted #333333; }
+    #storico .excel-export .tabella tbody tr {
+      font-family: "sofia-pro", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #333333;
+      line-height: initial;
+      background-color: white; }

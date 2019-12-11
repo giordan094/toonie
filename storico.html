@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Toonie</title>
+    <meta name="description" content="Toonie">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- head scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- plugins -->
+    <link rel="stylesheet" type="text/css"
+          href="css/vendor/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.min.css">
+
+</head>
+
+<body class="bg" id="storico">
+
+<!-- loader -->
+<div id="loader-panel">
+    <img src="assets/logo.png" alt="">
+</div>
+
+<!--bollettino-->
+<header class="container-fluid">
+    <div class="row no-gutters">
+        <div class="col-12 logo_wrapper">
+            <img src="assets/logo.svg" alt="Toonie Logo" class="logo">
+        </div>
+    </div>
+</header>
+
+
+<!--content-->
+<section class="container content">
+    <div class="row no-gutters">
+        <div class="col-12 col-storico">
+            <!--form-->
+            <form action="">
+                <div class="form-row align-items-baseline">
+                    <div class="form-group col-3 pr-md-4">
+                        <label for="statoOperazione">Stato Operazione</label>
+                        <select class="custom-select" id="statoOperazione" required>
+                            <option selected disabled value="">Selezionare...</option>
+                            <option>Corrente</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="form-group col-3 pl-md-4 pr-md-4">
+                        <label for="tipoOperazione">Tipo Operazione</label>
+                        <select class="custom-select" id="tipoOperazione" required>
+                            <option selected disabled value="">Selezionare...</option>
+                            <option>Bianco</option>
+                            <option>Nero</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="form-group col-6 pl-md-4">
+                        <label for="IDoperazione">ID operazione</label>
+                        <input type="text" class="form-control" id="IDoperazione">
+                    </div>
+                </div>
+                <div class="separator-dotted"></div>
+                <div class="form-row align-items-end">
+
+                    <div class="form-group col-3 pr-md-4">
+                        <div class="custom-control custom-switch">
+                            <div class="switch-titolo">Tipo ricerca per importo</div>
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1">Importo
+                                esatto</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group col-5 pl-md-4 pr-md-4">
+                        <label for="importo">Importo</label>
+                        <input type="text" class="form-control" id="importo">
+                    </div>
+                    <div class="form-group col-4 pl-md-4">
+                        <label for="A">A</label>
+                        <input type="text" class="form-control" id="A">
+                    </div>
+                </div>
+                <div class="separator-dotted"></div>
+                <div class="form-row">
+                    <div class="form-group col-6 pr-md-4">
+                        <label for="debitore">Debitore</label>
+                        <input type="text" class="form-control" id="debitore"></div>
+                    <div class="form-group col-6 pl-md-4">
+                        <label for="creditore">Creditore</label>
+                        <input type="text" class="form-control" id="creditore"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-4 pr-md-4">
+                        <label for="tipoData">Tipo Data</label>
+                        <select class="custom-select" id="tipoData" required>
+                            <option selected disabled value="">Selezionare...</option>
+                            <option>Pagamento</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-4 pl-md-4 pr-md-4">
+                        <label for="dataFrom">Data da</label>
+                        <div class="input-group  date" data-provide="datepicker">
+                            <input type="text" class="form-control no-round-corner" id="dataFrom">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group pl-md-4 col-4 date" data-provide="datepicker">
+                        <label for="dataTo">Data A</label>
+                        <input type="text" class="form-control" id="dataTo">
+                        <!--<div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>-->
+                    </div>
+
+                </div>
+
+                <div class="form-group ml-auto col-3">
+                    <button type="submit" class="btn">Ricerca</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<section class="excel-export">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-12">
+
+                <div class="ml-auto col-3">
+                    <button type="button" class="btn mt-4 mb-4">Esporta Excel</button>
+                </div>
+
+                <div class="table-responsive-lg">
+                    <table class="table table-hover table-borderless tabella">
+                        <thead>
+                        <tr>
+                            <th scope="col">Tipo operazione</th>
+                            <th scope="col">Importo</th>
+                            <th scope="col">Debitore</th>
+                            <th scope="col">Creditore</th>
+                            <th scope="col">Stato</th>
+                            <th scope="col">Stato operazione</th>
+                            <th scope="col">Data pagamento</th>
+                            <th scope="col">Data Applicativa</th>
+                            <th scope="col">Data Conferma</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+<!-- scripts -->
+<script src="js/base.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</body>
+
+</html>

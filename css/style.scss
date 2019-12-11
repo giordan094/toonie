@@ -14,9 +14,36 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/*focus and checked fix*/
 *:focus {
-  outline: none;
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(90,51,197,.25) !important;
 }
+.custom-control-input:checked + label::before{
+  border-color: $viola_5A33C5 !important;
+  background-color: $viola_5A33C5 !important;
+}
+.custom-control-input:focus + label::before{
+  box-shadow: 0 0 0 0.2rem rgba(90,51,197,.25) !important;
+}
+
+.form-check-input:checked + label::before , .form-check-input:focus + label::before{
+  box-shadow: 0 0 0 0.2rem rgba(90,51,197,.25) !important;
+  outline: none !important;
+}
+
+/*text selection fix*/
+::selection {
+  background: $viola_chiaro_9C85DC;
+  color: white/* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $viola_chiaro_9C85DC;
+  color: white/* Gecko Browsers */
+}
+
+
+
 
 .container-fluid,
 footer {
@@ -28,7 +55,27 @@ footer {
 
 }
 
+
+.separator-dotted {
+  border-bottom: 2px dotted $nero_333333;
+  margin-bottom: 1.2rem;
+  &:not(:last-of-type) {
+    padding-top: 10px;
+  }
+  &:last-of-type{
+    margin-bottom: 40px;
+  }
+}
+
+label {
+  @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+  span{
+    color: $grigio_666666;
+  }
+}
+
 @import "modules/loader";
 @import "modules/bollettino";
 @import "modules/mav";
 @import "modules/riepilogo";
+@import "modules/storico";
