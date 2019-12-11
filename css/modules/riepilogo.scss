@@ -1,22 +1,23 @@
 #riepilogo {
 
 
-  .progress-bar{
-    .compila{
+  .progress-bar {
+    .compila {
       background-color: $viola_5A33C5;
-      &:after{
+
+      &:after {
         border-left-color: $viola_5A33C5;
       }
     }
-    .riepilogo{
+
+    .riepilogo {
       background-color: $viola_scuro_171234;
-      &:after{
+
+      &:after {
         border-left-color: $viola_scuro_171234;
       }
     }
   }
-
-
 
 
   table {
@@ -42,23 +43,47 @@
     @include text($fontfamily_SofiaPro, $font20, $fontweight_medium, $viola_5A33C5);
   }
 
-  .abc-checkbox label {
-    @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
-    padding-left: 12px;
-    padding-top: 2px;
+  .abc-checkbox {
+    margin-bottom: 40px;
+    label {
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+      padding-left: 12px;
+      padding-top: 2px;
 
-    &::before {
-      width: 25px;
-      height: 25px;
+
+      &::before {
+        width: 25px;
+        height: 25px;
+      }
+
+      &::after {
+        width: 25px;
+        height: 25px;
+        top: 5px;
+        font-size: 17px;
+      }
+
+    }
+  }
+
+
+  .btn {
+    border-radius: 12px;
+
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
+
+    &.indietro {
+      background-color: $verde_7FFF9C;
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, $nero_333333);
     }
 
-    &::after {
-      width: 25px;
-      height: 25px;
-      top: 5px;
-      font-size: 17px;
+    &.paga {
+      background-color: $viola_5A33C5;
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
     }
-
   }
 }
 
