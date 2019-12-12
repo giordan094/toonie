@@ -1,3 +1,28 @@
-#index{
+#index {
+  .header {
+    .login {
+      @include button($grigio_bg_F2F2F2, $nero_333333);
+    }
 
+    .signup {
+      @include button($viola_5A33C5, white, 100%, auto);
+    }
+  }
+
+
+  .content {
+
+    .row-content {
+      .logo {
+      }
+
+      .testo {
+        @include text($fontfamily_SofiaPro, $font20, $fontweight_medium, $nero_333333);
+      }
+
+      .require_info {
+        @include button($viola_5A33C5, white, 50%, auto)
+      }
+    }
+  }
 }

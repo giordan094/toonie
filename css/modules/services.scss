@@ -1,0 +1,17 @@
+.sidebar {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.64);
+  position: fixed;
+  color: white;
+ 
+  font-size: 2em;
+  text-align: center;
+  top: 0;
+  right: -300px;
+  bottom: 0;
+  width: 300px;
+  background: #448AFF;
+  transition: all 200ms ease-out;
+  &.open{
+    right: 0;
+  }
+}

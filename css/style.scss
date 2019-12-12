@@ -18,6 +18,7 @@ body {
 *:focus {
   outline: none !important;
   box-shadow: 0 0 0 0.2rem rgba(90,51,197,.25) !important;
+  border-color: $viola_5A33C5 !important;
 }
 .custom-control-input:checked + label::before{
   border-color: $viola_5A33C5 !important;
@@ -79,3 +80,5 @@ label {
 @import "modules/mav";
 @import "modules/riepilogo";
 @import "modules/storico";
+@import "modules/index";
+@import "modules/services";
