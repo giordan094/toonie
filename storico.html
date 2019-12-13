@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8"/>
@@ -21,6 +21,10 @@
           href="css/vendor/awesome-bootstrap-checkbox.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
     <!-- style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.min.css">
 
@@ -118,24 +122,41 @@
                         </div>
                     </div>
 
+                    <!--      <div class="form-group col-4 pl-md-4 pr-md-4">
+                              <label for="dataFrom">Data da</label>
+                              <div class="input-group  date" data-provide="datepicker">
+                                  <input type="text" class="form-control no-round-corner" id="dataFrom">
+                                  <div class="input-group-append">
+                                      <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="form-group col-4 pl-md-4 pr-md-4">
+                              <label for="dataTo">Data A</label>
+                              <div class="input-group  date" data-provide="datepicker">
+                                  <input type="text" class="form-control no-round-corner" id="dataTo">
+                                  <div class="input-group-append">
+                                      <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                  </div>
+                              </div>
+                          </div>-->
+
+
                     <div class="form-group col-4 pl-md-4 pr-md-4">
-                        <label for="dataFrom">Data da</label>
-                        <div class="input-group  date" data-provide="datepicker">
-                            <input type="text" class="form-control no-round-corner" id="dataFrom">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                            </div>
+                        <div class="input-group">
+                            <label for="dataFrom">Data da</label>
+                            <input type="text" class="form-control" id="dataFrom">
                         </div>
                     </div>
 
-
-                    <div class="form-group pl-md-4 col-4 date" data-provide="datepicker">
-                        <label for="dataTo">Data A</label>
-                        <input type="text" class="form-control" id="dataTo">
-                        <!--<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>-->
+                    <div class="form-group col-4 pl-md-4 pr-md-4">
+                        <div class="input-group">
+                            <label for="dataTo">Data A</label>
+                            <input type="text" class="form-control" id="dataTo">
+                        </div>
                     </div>
+
 
                 </div>
 
@@ -154,11 +175,13 @@
             <div class="col-12">
 
                 <div class="ml-auto col-3">
-                    <button type="button" class="btn mt-4 mb-4">Esporta Excel</button>
+                    <button type="button" onclick="exportTableToExcel('storico-table','hystory')" class="btn mt-4 mb-4">
+                        Esporta Excel
+                    </button>
                 </div>
 
                 <div class="table-responsive-lg">
-                    <table class="table table-hover table-borderless tabella">
+                    <table class="table table-hover table-borderless tabella" id="storico-table">
                         <thead>
                         <tr>
                             <th scope="col">Tipo operazione</th>
@@ -202,6 +225,69 @@
         </div>
     </div>
 </section>
+
+
+<script>
+    function exportTableToExcel(tableID, filename = '') {
+        var downloadLink;
+        var dataType = 'application/vnd.ms-excel';
+        var tableSelect = document.getElementById(tableID);
+        var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+        // Specify file name
+        filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+        // Create download link element
+        downloadLink = document.createElement("a");
+
+        document.body.appendChild(downloadLink);
+
+        if (navigator.msSaveOrOpenBlob) {
+            var blob = new Blob(['\ufeff', tableHTML], {
+                type: dataType
+            });
+            navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+        }
+    }
+</script>
+
+
+<script>
+
+    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+    var tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    $('#dataFrom').datepicker({
+        value: today.toLocaleDateString("en-GB"),
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        showRightIcon: false,
+        format: 'dd/mm/yyyy',
+        maxDate: function () {
+            return $('#dataTo').val();
+        }
+    });
+    $('#dataTo').datepicker({
+        value: tomorrow.toLocaleDateString("en-GB"),
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        showRightIcon: false,
+        format: 'dd/mm/yyyy',
+        minDate: function () {
+            return $('#dataFrom').val();
+        }
+    });
+</script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"

@@ -17,22 +17,244 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- plugins -->
+    <link rel="stylesheet" href="css/vendor/hamburgers.min.css">
 
     <!-- style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.min.css">
 
 </head>
 
-<body class="bg" id="index">
+<body class="bg" id="services">
 
 <!-- loader -->
 <div id="loader-panel">
     <img src="assets/logo.png" alt="">
 </div>
 
-<a class="btn">open sidebar</a>
-<div class="sidebar">I am on right!</div>
+<!--header-->
+<header class="container-fluid header-services">
+    <div class="row no-gutters">
+        <div class="col-6 logo_wrapper">
+            <img src="assets/logo.svg" alt="Toonie Logo" class="logo">
 
+        </div>
+        <div class="col-6 text-right hamburger-wrapper  ">
+            <!--hamburger-->
+            <button class="hamburger hamburger--arrowalt-r hamburger-header"  type="button">
+             <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+             </span>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!--sidebar-->
+<section class="sidebar">
+    <div class="container">
+
+        <button class="hamburger hamburger--arrowalt-r hamburger-sidebar is-active" type="button">
+             <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+             </span>
+        </button>
+
+        <div class="row row-sidebar">
+            <div class="col-12">
+                <div class="user mb-3">
+                    <p class="pro-pic mb-2">NL</p>
+                    <p class="agent mb-0">Agent:</p>
+                    <span class="nome">Name</span>
+                    <span class="congnome">Lastname</span>
+                </div>
+
+                <div class="wallet mb-5">
+                    <p class="bilancio-portafoglio mb-0">Wallet balance:</p>
+                    <div class="bilancio">
+                        <span class="valuta">£</span>
+                        <span class="cash">2340,80</span>
+                    </div>
+                </div>
+
+                <h2 class="titolo pb-4">Agent Tools</h2>
+                <a href="" class="link profile ">
+                    <img src="assets/edit_profile.svg" alt="Edit profile" class="icona pb-3">
+                    <p class="testo mb-5">Edit profile</p>
+                </a>
+                <a href="" class="link profile">
+                    <img src="assets/wallet_top_up.svg" alt="Wallet Top-up" class="icona pb-3">
+                    <p class="testo mb-5">Wallet Top-up</p>
+                </a>
+                <a href="" class="link profile">
+                    <img src="assets/reports.svg" alt="Reports" class="icona pb-3">
+                    <p class="testo  mb-5">Reports</p>
+                </a>
+                <a href="" class="link profile">
+                    <img src="assets/help.svg" alt="Help" class="icona pb-3">
+                    <p class="testo mb-5">Help</p>
+                </a>
+                <a href="" class="link profile">
+                    <img src="assets/sign_off.svg" alt="Sign Off" class="icona pb-3">
+                    <p class="testo mb-5">Sign Off</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--content-->
+<div class="container text-center pt-4 pb-5" id="content">
+    <div class="row-no-gutters">
+        <div class="col-12">
+
+            <h5 class="titolo pb-5">Banking Services</h5>
+            <div class="row">
+                <div class="col-4 pr-md-4">
+                    <img src="assets/open_bank_account.svg" alt="Open bank account" class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-4 pr-md-4 pb-3">
+                    <img src="assets/cash_deposit.svg" alt="Cash deposit" class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-4">
+                    <img src="assets/cash_withdraw.svg" alt="Cash withdraw" class="service-pic img-fluid">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pr-md-4">
+                    <a href="" class="btn">Open bank account</a>
+                </div>
+                <div class="col-4 pl-md-4 pr-md-4">
+                    <a href="" class="btn">Cash deposit</a>
+                </div>
+                <div class="col-4 pl-md-4">
+                    <a href="" class="btn">Cash withdraw</a>
+                </div>
+            </div>
+
+            <div class="separator pt-4 pb-4"></div>
+
+            <h5 class="titolo pb-5">Payment Services</h5>
+            <div class="row">
+                <div class="col-4 pr-md-4">
+                    <img src="assets/EU_wire_transfer.svg" alt="EU Wire Transfer" class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-4 pr-md-4 pb-3">
+                    <img src="assets/extra-eu_wire_transfer.svg" alt="Extra-EU Wire Transfer"
+                         class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-4">
+                    <img src="assets/request_money_by_link.svg" alt="Request Money by Link"
+                         class="service-pic img-fluid">
+
+                </div>
+            </div>
+            <div class="row pb-5">
+                <div class="col-4 pr-md-4">
+                    <a href="" class="btn">EU Wire Transfer</a>
+                </div>
+                <div class="col-4 pl-md-4 pr-md-4">
+                    <a href="" class="btn">Extra-EU Wire Transfer</a>
+                </div>
+                <div class="col-4 pl-md-4">
+                    <a href="" class="btn">Request Money by Link</a>
+                </div>
+            </div>
+
+            <div class="row pt-5">
+                <div class="col-4 pr-md-4">
+                    <img src="assets/money_remittance.svg" alt="Money Remittance" class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-5 pr-md-4 pb-3">
+                    <img src="assets/bill_taxes.svg" alt="Bill / Taxes" class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-4 pb-3">
+                    <img src="assets/mobile_voucher_topup.svg" alt="Mobile / Voucher Topup"
+                         class="service-pic img-fluid">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pr-md-4">
+                    <a href="" class="btn">Money Remittance</a>
+                </div>
+                <div class="col-4 pl-md-4 pr-md-4">
+                    <a href="" class="btn">Bill / Taxes</a>
+                </div>
+                <div class="col-4 pl-md-4">
+                    <a href="" class="btn">Mobile / Voucher Topup</a>
+                </div>
+            </div>
+
+            <div class="separator pt-4 pb-4"></div>
+
+            <h5 class="titolo pb-5">Card Services</h5>
+            <div class="row">
+                <div class="col-4 pl-md-5 pr-md-4 pb-3">
+                    <img src="assets/sell_prepaid_card.svg" alt="Sell Prepaid Card" class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-4 pb-3">
+                    <img src="assets/topup_prepaid_card.svg" alt="Topup Prepaid Card" class="service-pic img-fluid">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pr-md-4">
+                    <a href="" class="btn">Sell Prepaid Card</a>
+                </div>
+                <div class="col-4 pl-md-4">
+                    <a href="" class="btn">Topup Prepaid Card</a>
+                </div>
+            </div>
+
+            <div class="separator pt-4 pb-4"></div>
+            <h5 class="titolo pb-5">Corporate Services</h5>
+            <div class="row">
+                <div class="col-4 pr-md-4 pb-3">
+                    <img src="assets/form_a_company.svg" alt="Form a Company" class="service-pic img-fluid">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pr-md-4">
+                    <a href="" class="btn">Form a Company</a>
+                </div>
+            </div>
+
+            <div class="separator pt-4 pb-4"></div>
+            <h5 class="titolo pb-5">Credits Services</h5>
+            <div class="row">
+                <div class="col-4 pr-md-4 pb-3">
+                    <img src="assets/micro_loan.svg" alt="Micro Loan" class="service-pic img-fluid">
+
+                </div>
+                <div class="col-4 pl-md-4">
+                    <img src="assets/car_loan.svg" alt="Car Loan" class="service-pic img-fluid">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pr-md-4">
+                    <a href="" class="btn">Micro Loan</a>
+                </div>
+                <div class="col-4 pl-md-4">
+                    <a href="" class="btn">Car Loan</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
 
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
@@ -47,9 +269,15 @@
 <script>
     $(document).ready(function () {
 
-        $(".btn").on("click", function () {
+        $(".hamburger").on("click", function () {
+
+            $(".hamburger-header").toggleClass("hide");
             $(".sidebar").toggleClass("open");
+            $("#content, .header-services ").toggleClass("sidebar-open");
+            $("html").toggleClass("disable-scrollbars");
         });
+
+
 
 
     });

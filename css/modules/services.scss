@@ -1,17 +1,164 @@
-.sidebar {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.64);
-  position: fixed;
-  color: white;
- 
-  font-size: 2em;
-  text-align: center;
-  top: 0;
-  right: -300px;
-  bottom: 0;
-  width: 300px;
-  background: #448AFF;
-  transition: all 200ms ease-out;
-  &.open{
-    right: 0;
+//disable scrollbar for html but enable it with overflow scroll for the sidebar
+.disable-scrollbars {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Chrome/Safari/Webkit */
+  }
+}
+
+#services {
+
+  .header-services {
+    transition: 200ms linear;
+    &.sidebar-open {
+      /*300px is the sidebar width plus 15px of standard bootstrap container*/
+      padding-right: 315px;
+
+    }
+    .hamburger-wrapper {
+      padding-right: 15px;
+      .hamburger {
+        padding: 23px 15px 14px;
+        &.hide{
+          display: none;
+        }
+        &:focus {
+          box-shadow: none !important;
+        }
+        &:hover {
+          box-shadow: none !important;
+          &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+            background-color: darken($verde_7FFF9C, 25%);
+          }
+        }
+        &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+          background-color: $verde_7FFF9C;
+        }
+      }
+
+    }
+  }
+
+  .sidebar {
+    box-shadow: 0 0 5px rgba($viola_scuro_171234, 0.64);
+    position: fixed;
+    color: white;
+    text-align: center;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    overflow-y: scroll;
+    width: 100%;
+    background: $viola_scuro_171234;
+    transition: all 200ms ease-out;
+    z-index: 99998;
+    &.open {
+      right: 0;
+    }
+    @include mq(sm) {
+      right: -310px;
+      width: 300px;
+    }
+    .hamburger {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 23px 15px 14px;
+      &:focus {
+        box-shadow: none !important;
+      }
+      &:hover {
+        box-shadow: none !important;
+        &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+          background-color: darken($verde_7FFF9C, 25%);
+        }
+      }
+      &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+        background-color: $verde_7FFF9C;
+      }
+    }
+    .row-sidebar {
+      padding-top: 50px;
+      @include mq(sm) {
+        padding-top: 100px;
+      }
+
+
+      .user {
+        @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
+        .pro-pic {
+          background-color: $verde_7FFF9C;
+          border-radius: 100%;
+          width: 50px;
+          height: 50px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          font-size: $font24;
+        }
+      }
+      .wallet {
+        @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, $verde_7FFF9C);
+      }
+      .titolo {
+        @include text($fontfamily_Comfortaa, $font28, $fontweight_bold, white);
+      }
+      .link {
+        @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
+        .icona {
+          transition: 200ms linear;
+          width: 50px;
+          height: 50px;
+        }
+        &:focus {
+          box-shadow: none !important;
+        }
+        &:hover {
+          text-decoration: none !important;
+          .icona {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+
+  #content {
+    transition: all 200ms ease-out;
+    &.sidebar-open {
+      /*300px is the sidebar width plus 15px of standard bootstrap container*/
+      padding-right: 315px;
+
+    }
+    .titolo {
+      max-width: 1500px;
+      @include text($fontfamily_Comfortaa, $font32, $fontweight_regular, $viola_scuro_171234);
+
+    }
+
+    .row {
+      justify-content: center;
+      [class^="col-"] {
+        padding: 0 7px;
+        .service-pic {
+          width: 100%;
+          max-width: 100px;
+          max-height: 100px;
+        }
+        .btn {
+          @include button($viola_5A33C5, white, 100%, 100%)
+        }
+      }
+    }
+
+    .separator {
+      border-bottom: 2px dotted $nero_333333;
+      margin-bottom: 2rem;
+    }
+
   }
 }
