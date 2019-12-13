@@ -56,6 +56,12 @@ body {
   background: #9C85DC;
   color: white; }
 
+a:hover {
+  text-decoration: none; }
+
+a:focus {
+  box-shadow: none !important; }
+
 .container-fluid,
 footer {
   overflow: hidden; }
@@ -202,6 +208,8 @@ label {
       line-height: initial; }
       .bg .content .col-bollettino form label span {
         color: #666666; }
+      .bg .content .col-bollettino form label a {
+        color: #5A33C5; }
     .bg .content .col-bollettino form .separator-dotted {
       border-bottom: 2px dotted #333333;
       margin-bottom: 1.2rem; }
