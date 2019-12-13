@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Toonie</title>
-    <meta name="description" content="Toonie">
+    <title>Services</title>
+    <meta name="description" content="Services">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,12 +35,13 @@
 <header class="container-fluid header-services">
     <div class="row no-gutters">
         <div class="col-6 logo_wrapper">
-            <img src="assets/logo.svg" alt="Toonie Logo" class="logo">
-
+            <a href="services.html">
+                <img src="assets/logo.svg" alt="Toonie Logo" class="logo">
+            </a>
         </div>
         <div class="col-6 text-right hamburger-wrapper  ">
             <!--hamburger-->
-            <button class="hamburger hamburger--arrowalt-r hamburger-header"  type="button">
+            <button class="hamburger hamburger--arrowalt-r hamburger-header" type="button">
              <span class="hamburger-box">
               <span class="hamburger-inner"></span>
              </span>
@@ -276,8 +277,6 @@
             $("#content, .header-services ").toggleClass("sidebar-open");
             $("html").toggleClass("disable-scrollbars");
         });
-
-
 
 
     });
