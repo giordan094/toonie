@@ -66,6 +66,9 @@
       top: 0;
       left: 0;
       padding: 23px 15px 14px;
+      @include mq(sm) {
+        visibility: hidden;
+      }
       &:focus {
         box-shadow: none !important;
       }

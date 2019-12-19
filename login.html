@@ -23,43 +23,49 @@
 
 </head>
 
-<body class="bg" id="index">
+<body class="bg" id="login">
 
 <!-- loader -->
 <div id="loader-panel">
     <img src="assets/logo.svg" alt="">
 </div>
 
-<section class="container header">
-    <div class="row no-gutters row-autenticazione pt-5 pb-5">
-        <div class="col-3 ml-auto pr-md-4">
-            <a href="login.html">
-            <button type="buttun" class="btn login">LOG IN</button>
+<!--header-->
+<header class="container-fluid header-services">
+    <div class="row no-gutters">
+        <div class="col-6 logo_wrapper">
+            <a href="services.html">
+                <img src="assets/logo.svg" alt="Toonie Logo" class="logo">
             </a>
         </div>
-        <div class="col-3 pl-md-4">
-            <button type="buttun" class="btn signup">SIGN UP</button>
-        </div>
     </div>
-</section>
+</header>
+
 
 <section class="container content pt-md-5 pb-md-5">
-    <div class="row no-gutters row-content">
-        <div class="col-md-6 order-md-last col-img pl-md-2">
-            <img src="assets/toonie_tablet.svg" alt="Toonie tablet" class="img-fluid">
-        </div>
-        <div class="col-md-6 col-text">
-            <img class="logo mb-5" src="assets/logo.svg" alt="Toonie logo">
-            <p class="testo">
-                is an innovative marketplace that empower every agent or
-                professional into a subsidiary of financial and corporate
-                services.
-            </p>
-            <p class="testo mb-5">
-                Current accounts, Payments, Top-ups but also companies
-                formation and credit services for small companies and
-                individuals.</p>
-            <a href="" target="_blank" class="btn require_info">Require information</a>
+    <div class="row no-gutters">
+        <div class="col-12 text-center">
+
+            <h1 class="titolo pt-4 pb-4">Log in</h1>
+
+            <form action="">
+                <div class="form-group pt-4 pb-4">
+                    <label for="email">Indirizzo Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group pb-4">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <div class="form-group pt-4">
+                    <a href="services.html">
+                        <button type="submit" style="pointer-events: none" class="btn">Log In</button>
+                    </a>
+                </div>
+            </form>
+
+
+            <a href="/" class="forgot-psw">Forgot Password?</a>
 
         </div>
     </div>

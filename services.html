@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="disable-scrollbars">
 
 <head>
     <meta charset="utf-8"/>
@@ -28,11 +28,11 @@
 
 <!-- loader -->
 <div id="loader-panel">
-    <img src="assets/logo.png" alt="">
+    <img src="assets/logo.svg" alt="">
 </div>
 
 <!--header-->
-<header class="container-fluid header-services">
+<header class="container-fluid header-services sidebar-open">
     <div class="row no-gutters">
         <div class="col-6 logo_wrapper">
             <a href="services.html">
@@ -41,7 +41,7 @@
         </div>
         <div class="col-6 text-right hamburger-wrapper  ">
             <!--hamburger-->
-            <button class="hamburger hamburger--arrowalt-r hamburger-header" type="button">
+            <button class="hamburger hamburger--arrowalt-r hamburger-header hide" type="button">
              <span class="hamburger-box">
               <span class="hamburger-inner"></span>
              </span>
@@ -52,7 +52,7 @@
 
 
 <!--sidebar-->
-<section class="sidebar">
+<section class="sidebar open">
     <div class="container">
 
         <button class="hamburger hamburger--arrowalt-r hamburger-sidebar is-active" type="button">
@@ -106,7 +106,7 @@
 
 
 <!--content-->
-<div class="container text-center pt-4 pb-5" id="content">
+<div class="container text-center pt-4 pb-5 sidebar-open" id="content">
     <div class="row-no-gutters">
         <div class="col-12">
 
@@ -277,7 +277,6 @@
             $("#content, .header-services ").toggleClass("sidebar-open");
             $("html").toggleClass("disable-scrollbars");
         });
-
 
     });
 </script>

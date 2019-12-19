@@ -1,0 +1,23 @@
+#login {
+  .container {
+    max-width: 900px;
+
+    .titolo {
+      @include text($fontfamily_Comfortaa, $font20, $fontweight_regular, $viola_scuro_171234);
+    }
+
+    input {
+      border-radius: 12px;
+      background-color: $grigio_bg_F2F2F2;
+      border-color: $grigio_666666;
+    }
+
+    .btn {
+      @include button($viola_5A33C5, white, 100%, auto);
+    }
+
+    .forgot-psw {
+      @include text($fontfamily_SofiaPro, $font16, $fontweight_medium, $nero_333333);
+    }
+  }
+}
