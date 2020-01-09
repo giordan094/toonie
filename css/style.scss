@@ -15,23 +15,25 @@ body {
 }
 
 /*focus and checked fix*/
-*:focus {
+input:focus, select:focus {
   outline: none !important;
-  box-shadow: 0 0 0 0.2rem rgba(90, 51, 197, .25) !important;
-  border-color: $viola_5A33C5 !important;
+  box-shadow: 0 0 0 0.2rem rgba($verde_7FFF9C, .25) !important;
+  border-color: $verde_7FFF9C !important;
 }
 
+/*switch*/
 .custom-control-input:checked + label::before {
   border-color: $viola_5A33C5 !important;
   background-color: $viola_5A33C5 !important;
 }
 
 .custom-control-input:focus + label::before {
-  box-shadow: 0 0 0 0.2rem rgba(90, 51, 197, .25) !important;
+  box-shadow: 0 0 0 0.2rem rgba($viola_5A33C5, .25) !important;
 }
 
-.form-check-input:checked + label::before, .form-check-input:focus + label::before {
-  box-shadow: 0 0 0 0.2rem rgba(90, 51, 197, .25) !important;
+/*checkbox*/
+.form-check-input:active + label::before, .abc-checkbox input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba($viola_5A33C5, .25);
   outline: none !important;
 }
 
@@ -84,6 +86,50 @@ label {
     color: $grigio_666666;
   }
 }
+
+/*semantic select*/
+.ui.selection.dropdown {
+  border-radius: 12px;
+  background-color: $grigio_E6E6E6;
+  border-color: $grigio_666666;
+  min-width: auto;
+  min-height: auto;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  line-height: inherit;
+  color: #495057;
+  font-size: 1rem;
+
+  &:focus, &.active, &:hover {
+    border-color: $verde_7FFF9C !important;
+
+    .menu {
+      border-color: $verde_7FFF9C !important;
+    }
+  }
+
+  i:first-of-type {
+    transform: rotate(180deg) !important;
+    top: 4px !important;
+  }
+
+  i:last-of-type {
+    top: 11px !important;
+  }
+
+  .menu {
+    border-color: $grigio_666666;
+    background-color: $grigio_bg_F2F2F2;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+    .item:hover {
+      background: rgba(0, 0, 0, .03);
+      color: rgba(0, 0, 0, .95);
+    }
+  }
+}
+
 
 @import "modules/loader";
 @import "modules/bollettino";

@@ -19,6 +19,9 @@
     <!-- plugins -->
     <link rel="stylesheet" type="text/css"
           href="css/vendor/awesome-bootstrap-checkbox.css">
+    <!--semantic ui checkbox-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <!-- style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.min.css">
 
@@ -81,11 +84,23 @@
                 <h4 class="titolo mb-3">TIPO BOLLETTINO</h4>
                 <div class="form-row">
                     <div class="form-group col-6">
-                        <select class="custom-select" id="validationCustom04" required>
-                            <option selected disabled value="">Scegli...</option>
-                            <option>Bianco</option>
-                            <option>Nero</option>
-                        </select>
+                        <!--                <select class="custom-select" id="validationCustom04" required>
+                                            <option selected disabled value="">Scegli...</option>
+                                            <option>Bianco</option>
+                                            <option>Nero</option>
+                                        </select>-->
+
+                        <div class="ui selection dropdown d-block" id="selectTipoBollettino">
+                            <input type="hidden" name="gender" id="tipoBollettino">
+                            <i class="dropdown icon"></i>
+                            <i class="dropdown icon"></i>
+                            <div class="text">Selezionare...</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Bianco</div>
+                                <div class="item" data-value="0">Nero</div>
+                            </div>
+                        </div>
+
                         <div class="invalid-feedback">
                             Please select a valid state.
                         </div>
@@ -185,6 +200,9 @@
     </div>
 </section>
 
+<script>
+    $("#selectTipoBollettino").dropdown();
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

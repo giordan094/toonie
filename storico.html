@@ -22,9 +22,11 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 
-
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+    <!--semantic ui checkbox-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <!-- style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.min.css">
 
@@ -58,21 +60,46 @@
                 <div class="form-row align-items-baseline">
                     <div class="form-group col-3 pr-md-4">
                         <label for="statoOperazione">Stato Operazione</label>
-                        <select class="custom-select" id="statoOperazione" required>
+                        <!--<select class="custom-select" id="statoOperazione" required>
                             <option selected disabled value="">Selezionare...</option>
                             <option>Corrente</option>
-                        </select>
+                        </select>-->
+
+                        <div class="ui selection dropdown d-block" id="selectStatoOperazione">
+                            <input type="hidden" name="gender" id="statoOperazione">
+                            <i class="dropdown icon"></i>
+                            <i class="dropdown icon"></i>
+                            <div class="text">Selezionare...</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Corrente</div>
+                                <div class="item" data-value="0">Corrente 2</div>
+                                <div class="item" data-value="2">Corrente 3</div>
+                            </div>
+                        </div>
+
                         <div class="invalid-feedback">
                             Please select a valid state.
                         </div>
                     </div>
                     <div class="form-group col-3 pl-md-4 pr-md-4">
                         <label for="tipoOperazione">Tipo Operazione</label>
-                        <select class="custom-select" id="tipoOperazione" required>
+                        <!--<select class="custom-select" id="tipoOperazione" required>
                             <option selected disabled value="">Selezionare...</option>
                             <option>Bianco</option>
                             <option>Nero</option>
-                        </select>
+                        </select>-->
+
+                        <div class="ui selection dropdown d-block" id="selectTipoOperazione">
+                            <input type="hidden" name="gender" id="tipoOperazione">
+                            <i class="dropdown icon"></i>
+                            <i class="dropdown icon"></i>
+                            <div class="text">Selezionare...</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Bianco</div>
+                                <div class="item" data-value="0">Nero</div>
+                            </div>
+                        </div>
+
                         <div class="invalid-feedback">
                             Please select a valid state.
                         </div>
@@ -115,44 +142,34 @@
                 <div class="form-row">
                     <div class="form-group col-4 pr-md-4">
                         <label for="tipoData">Tipo Data</label>
-                        <select class="custom-select" id="tipoData" required>
+                        <!--<select class="custom-select" id="tipoData" required>
                             <option selected disabled value="">Selezionare...</option>
                             <option>Pagamento</option>
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
+                        </div>-->
+                        <div class="ui selection dropdown d-block" id="selectTipoData">
+                            <input type="hidden" name="gender" id="tipoData">
+                            <i class="dropdown icon"></i>
+                            <i class="dropdown icon"></i>
+                            <div class="text">Selezionare...</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Pagamento</div>
+                                <div class="item" data-value="0">Pagamento 2</div>
+                            </div>
                         </div>
+
                     </div>
 
-                    <!--      <div class="form-group col-4 pl-md-4 pr-md-4">
-                              <label for="dataFrom">Data da</label>
-                              <div class="input-group  date" data-provide="datepicker">
-                                  <input type="text" class="form-control no-round-corner" id="dataFrom">
-                                  <div class="input-group-append">
-                                      <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="form-group col-4 pl-md-4 pr-md-4">
-                              <label for="dataTo">Data A</label>
-                              <div class="input-group  date" data-provide="datepicker">
-                                  <input type="text" class="form-control no-round-corner" id="dataTo">
-                                  <div class="input-group-append">
-                                      <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                                  </div>
-                              </div>
-                          </div>-->
-
-
-                    <div class="form-group col-4 pl-md-4 pr-md-4">
+                    <div class="form-group col-4 pl-md-4 pr-md-4 d-flex">
                         <div class="input-group">
                             <label for="dataFrom">Data da</label>
                             <input type="text" class="form-control" id="dataFrom">
                         </div>
                     </div>
 
-                    <div class="form-group col-4 pl-md-4 pr-md-4">
+                    <div class="form-group col-4 pl-md-4 pr-md-4 d-flex">
                         <div class="input-group">
                             <label for="dataTo">Data A</label>
                             <input type="text" class="form-control" id="dataTo">
@@ -230,6 +247,11 @@
 
 
 <script>
+
+    $('#selectStatoOperazione').dropdown();
+    $('#selectTipoOperazione').dropdown();
+    $('#selectTipoData').dropdown();
+
     function exportTableToExcel(tableID, filename = '') {
         var downloadLink;
         var dataType = 'application/vnd.ms-excel';
@@ -260,10 +282,7 @@
             downloadLink.click();
         }
     }
-</script>
 
-
-<script>
 
     /* https://gijgo.com/datepicker/configuration/format */
     var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
@@ -302,7 +321,6 @@
 
 <!-- scripts -->
 <script src="js/base.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 </body>
 
 </html>
