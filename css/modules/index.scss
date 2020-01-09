@@ -1,6 +1,24 @@
 #index {
   .header {
     max-width: 1100px;
+
+    .language {
+      .dropdown-toggle {
+        min-width: 160px;
+      }
+
+      .dropdown-menu {
+        width: 162px;
+      }
+
+      .dropdown-item:focus, .dropdown-item:hover {
+        color: #333;
+        text-decoration: none;
+        background-color: lighten(#9c85dc, 0.25);
+      }
+
+    }
+
     .login {
       @include button($grigio_bg_F2F2F2, $nero_333333);
     }

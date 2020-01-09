@@ -12,27 +12,35 @@
 
   .header-services {
     transition: 200ms linear;
+
     &.sidebar-open {
       /*300px is the sidebar width plus 15px of standard bootstrap container*/
       padding-right: 315px;
 
     }
+
     .hamburger-wrapper {
       padding-right: 15px;
+
       .hamburger {
         padding: 23px 15px 14px;
-        &.hide{
+
+        &.hide {
           display: none;
         }
+
         &:focus {
           box-shadow: none !important;
         }
+
         &:hover {
           box-shadow: none !important;
+
           &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
             background-color: darken($verde_7FFF9C, 25%);
           }
         }
+
         &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
           background-color: $verde_7FFF9C;
         }
@@ -54,13 +62,16 @@
     background: $viola_scuro_171234;
     transition: all 200ms ease-out;
     z-index: 99998;
+
     &.open {
       right: 0;
     }
+
     @include mq(sm) {
       right: -310px;
       width: 300px;
     }
+
     .hamburger {
       position: absolute;
       top: 0;
@@ -69,28 +80,48 @@
       @include mq(sm) {
         visibility: hidden;
       }
+
       &:focus {
         box-shadow: none !important;
       }
+
       &:hover {
         box-shadow: none !important;
+
         &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
           background-color: darken($verde_7FFF9C, 25%);
         }
       }
+
       &.is-active .hamburger-inner, &.is-active .hamburger-inner:before, &.is-active .hamburger-inner:after, .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
         background-color: $verde_7FFF9C;
       }
     }
+
     .row-sidebar {
-      padding-top: 50px;
-      @include mq(sm) {
-        padding-top: 100px;
+
+      .language{
+        .dropdown-toggle{
+          min-width: 160px;
+          color: white;
+        }
+        .dropdown-toggle:hover{
+          color: white !important;
+        }
+        .dropdown-menu{
+          width: 162px;
+        }
+        .dropdown-item:focus, .dropdown-item:hover {
+          color: #333;
+          text-decoration: none;
+          background-color: lighten(#9c85dc, 0.25);
+        }
       }
 
 
       .user {
         @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
+
         .pro-pic {
           background-color: $verde_7FFF9C;
           border-radius: 100%;
@@ -104,24 +135,31 @@
           font-size: $font24;
         }
       }
+
       .wallet {
         @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, $verde_7FFF9C);
       }
+
       .titolo {
         @include text($fontfamily_Comfortaa, $font28, $fontweight_bold, white);
       }
+
       .link {
         @include text($fontfamily_SofiaPro, $font16, $fontweight_bold, white);
+
         .icona {
           transition: 200ms linear;
           width: 50px;
           height: 50px;
         }
+
         &:focus {
           box-shadow: none !important;
         }
+
         &:hover {
           text-decoration: none !important;
+
           .icona {
             transform: scale(1.2);
           }
@@ -132,11 +170,13 @@
 
   #content {
     transition: all 200ms ease-out;
+
     &.sidebar-open {
       /*300px is the sidebar width plus 15px of standard bootstrap container*/
       padding-right: 315px;
 
     }
+
     .titolo {
       max-width: 1500px;
       @include text($fontfamily_Comfortaa, $font32, $fontweight_regular, $viola_scuro_171234);
@@ -145,15 +185,25 @@
 
     .row {
       justify-content: center;
+
       [class^="col-"] {
         padding: 0 7px;
+
         .service-pic {
           width: 100%;
           max-width: 100px;
           max-height: 100px;
+          transition: all 300ms linear;
+
+          &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+          }
         }
+
         .btn {
           @include button($viola_5A33C5, white, 100%, 100%)
+
         }
       }
     }
