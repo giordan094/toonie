@@ -28,7 +28,7 @@
   "dependencies": {
     "aos": "^2.3.0",
     "mdbootstrap": "^4.10.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "natives": "^1.1.6",
     "node": "^11.15.0",
     "object-fit-images": "^3.2.3"
